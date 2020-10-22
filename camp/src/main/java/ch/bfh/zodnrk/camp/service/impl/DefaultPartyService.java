@@ -4,16 +4,18 @@ import ch.bfh.zodnrk.camp.model.Hero;
 import ch.bfh.zodnrk.camp.model.Party;
 import ch.bfh.zodnrk.camp.service.HeroService;
 import ch.bfh.zodnrk.camp.service.PartyService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.inject.Named;
 import java.util.ArrayList;
 import java.util.List;
 
+
 @Named
 public class DefaultPartyService implements PartyService {
 
     private static final int DEFAULT_PARTY_SIZE = 4;
-
     private final HeroService heroService;
 
     public DefaultPartyService(final HeroService heroService) {
@@ -33,7 +35,6 @@ public class DefaultPartyService implements PartyService {
         party.setMembers(members);
 
         System.out.println("Party created: " + party.toString());
-
         return party;
     }
 
