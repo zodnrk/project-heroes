@@ -37,7 +37,7 @@ public class ServiceConfig {
     }
 
     @Bean
-    public org.springframework.orm.jpa.JpaVendorAdapter jpaVendorAdapter() {
+    public JpaVendorAdapter jpaVendorAdapter() {
         HibernateJpaVendorAdapter bean = new HibernateJpaVendorAdapter();
         bean.setDatabase(Database.H2);
         bean.setGenerateDdl(true);
@@ -56,7 +56,7 @@ public class ServiceConfig {
 
     @Bean
     public JpaTransactionManager transactionManager(
-            EntityManagerFactory emf) {
-        return new JpaTransactionManager(emf);
+            EntityManagerFactory entityManagerFactory) {
+        return new JpaTransactionManager(entityManagerFactory);
     }
 }
