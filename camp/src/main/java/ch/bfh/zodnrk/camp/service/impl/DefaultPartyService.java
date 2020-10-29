@@ -4,8 +4,6 @@ import ch.bfh.zodnrk.camp.model.Hero;
 import ch.bfh.zodnrk.camp.model.Party;
 import ch.bfh.zodnrk.camp.service.HeroService;
 import ch.bfh.zodnrk.camp.service.PartyService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import javax.inject.Named;
 import java.util.ArrayList;

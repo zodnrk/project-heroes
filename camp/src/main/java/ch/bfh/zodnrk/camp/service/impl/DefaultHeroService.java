@@ -11,11 +11,10 @@ import java.util.Random;
 @Named
 public class DefaultHeroService implements HeroService {
 
+    private static final double DEFAULT_HERO_HEALTH = 100.0;
+    private final Random rng = new Random();
     @Autowired
     private HeroRepository heroRepository;
-    private final Random rng = new Random();
-
-    private static final double DEFAULT_HERO_HEALTH = 100.0;
 
     @Override
     public Hero createHero(final String name) {

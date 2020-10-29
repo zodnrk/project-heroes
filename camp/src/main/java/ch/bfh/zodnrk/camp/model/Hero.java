@@ -18,12 +18,12 @@ public class Hero {
     private int def;
     private double hp;
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public String getId() {
         return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
