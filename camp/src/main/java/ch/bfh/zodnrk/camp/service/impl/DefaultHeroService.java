@@ -31,4 +31,9 @@ public class DefaultHeroService implements HeroService {
 
         return heroRepository.findById(id).get();
     }
+
+    @Override
+    public void printStrongHeros(int atkLimit) {
+        heroRepository.findByAtkGreaterThan(atkLimit).forEach(System.out::println);
+    }
 }
