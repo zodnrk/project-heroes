@@ -1,5 +1,6 @@
 package ch.bfh.zodnrk.camp.service.conf;
 
+import ch.bfh.zodnrk.camp.repository.HeroRepository;
 import ch.bfh.zodnrk.camp.service.HeroService;
 import ch.bfh.zodnrk.camp.service.PartyService;
 import ch.bfh.zodnrk.camp.service.impl.DefaultHeroService;
@@ -22,8 +23,8 @@ import javax.sql.DataSource;
 @EnableJpaRepositories(basePackages = "ch.bfh.zodnrk.camp.repository")
 public class ServiceConfig {
     @Bean
-    public HeroService heroService() {
-        return new DefaultHeroService();
+    public HeroService heroService(HeroRepository heroRepository) {
+        return new DefaultHeroService(heroRepository);
     }
 
     @Bean

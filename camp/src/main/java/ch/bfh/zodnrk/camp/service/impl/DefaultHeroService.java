@@ -13,8 +13,11 @@ public class DefaultHeroService implements HeroService {
 
     private static final double DEFAULT_HERO_HEALTH = 100.0;
     private final Random rng = new Random();
-    @Autowired
     private HeroRepository heroRepository;
+
+    public DefaultHeroService(HeroRepository heroRepository) {
+        this.heroRepository = heroRepository;
+    }
 
     @Override
     public Hero createHero(final String name) {
@@ -32,7 +35,7 @@ public class DefaultHeroService implements HeroService {
     }
 
     @Override
-    public void printStrongHeros(int atkLimit) {
+    public void printStrongHeroes(int atkLimit) {
         heroRepository.findByAtkGreaterThan(atkLimit).forEach(System.out::println);
     }
 }
