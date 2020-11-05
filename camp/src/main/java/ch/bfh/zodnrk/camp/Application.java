@@ -15,7 +15,7 @@ public class Application {
         Party fellowship = partyService.createParty("The Fellowship");
 
         System.out.printf("Created party '%s' with %d members.%n", fellowship.getName(), fellowship.getMembers().size());
-        heroService.printStrongHeros(50);
+        heroService.printStrongHeroes(50);
         context.close();
     }
 }
