@@ -1,11 +1,26 @@
 package ch.bfh.zodnrk.camp.model;
 
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Hero {
 
+    @Id
+    @GeneratedValue(generator = "system-uuid")
+    @GenericGenerator(name = "system-uuid", strategy = "uuid")
+    private String id;
     private String name;
     private int atk;
     private int def;
     private double hp;
+
+    public String getId() {
+        return id;
+    }
 
     public String getName() {
         return name;
@@ -42,7 +57,8 @@ public class Hero {
     @Override
     public String toString() {
         return "Hero{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", atk=" + atk +
                 ", def=" + def +
                 ", hp=" + hp +
