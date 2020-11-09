@@ -3,17 +3,14 @@ package ch.bfh.zodnrk.camp.service.impl;
 import ch.bfh.zodnrk.camp.model.Hero;
 import ch.bfh.zodnrk.camp.repository.HeroRepository;
 import ch.bfh.zodnrk.camp.service.HeroService;
-import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.inject.Named;
 import java.util.Random;
 
-@Named
 public class DefaultHeroService implements HeroService {
 
     private static final double DEFAULT_HERO_HEALTH = 100.0;
     private final Random rng = new Random();
-    private HeroRepository heroRepository;
+    private final HeroRepository heroRepository;
 
     public DefaultHeroService(HeroRepository heroRepository) {
         this.heroRepository = heroRepository;
