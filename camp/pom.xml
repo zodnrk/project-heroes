@@ -46,7 +46,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>ch.bfh.zodnrk.camp.DemoApplication</mainClass>
+                            <mainClass>ch.bfh.zodnrk.camp.CampApplication</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
