@@ -5,6 +5,9 @@ import ch.bfh.zodnrk.camp.repository.HeroRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
+
 @RestController
 @RequestMapping("/heroes")
 public class HeroController {
@@ -18,12 +21,17 @@ public class HeroController {
     @GetMapping
     public @ResponseBody
     Iterable<Hero> list() {
-        return heroRepository.findAll();
+        Iterable<Hero> heroes = heroRepository.findAll();
+        heroes.forEach(this::addHateoasLinks);
+
+        return heroes;
     }
 
     @GetMapping("/{id}")
     public @ResponseBody Hero getById(@PathVariable String id) {
-        return heroRepository.findById(id).get();
+        Hero hero = heroRepository.findById(id).get();
+
+        return addHateoasLinks(hero);
     }
 
     @PostMapping
@@ -42,5 +50,9 @@ public class HeroController {
     @ResponseStatus(HttpStatus.OK)
     public void delete(@PathVariable String id) {
         heroRepository.deleteById(id);
+    }
+
+    private Hero addHateoasLinks(Hero hero) {
+        return hero.add(linkTo(methodOn(HeroController.class).getById(hero.getId())).withSelfRel());
     }
 }
