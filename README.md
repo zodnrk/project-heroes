@@ -17,5 +17,8 @@ curl -X PUT -H "Content-Type: application/json" -d '{"id":"<id>","name":"Lame Du
 
 # delete hero
 curl -X DELETE localhost:8080/heroes/<id> | jq
+
+# create party
+curl -H "Content-Type: application/json" -X POST -d '{"name":"The United Independants"}' localhost:8080/parties | jq
 ```
 The use of `jq` is optional but recommended.
