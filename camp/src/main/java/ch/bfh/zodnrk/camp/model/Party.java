@@ -1,8 +1,10 @@
 package ch.bfh.zodnrk.camp.model;
 
+import org.springframework.hateoas.RepresentationModel;
+
 import java.util.List;
 
-public class Party {
+public class Party extends RepresentationModel<Party> {
 
     private String name;
     private List<Hero> members;
