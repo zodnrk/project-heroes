@@ -17,7 +17,7 @@ public class ServiceConfig {
     }
 
     @Bean
-    public PartyService partyService(final HeroService heroService) {
-        return new DefaultPartyService(heroService);
+    public PartyService partyService(final HeroRepository heroRepository) {
+        return new DefaultPartyService(heroRepository);
     }
 }
