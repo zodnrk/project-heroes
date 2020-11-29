@@ -23,5 +23,8 @@ curl -H "Content-Type: application/json" -X POST -d '{"name":"The United Indepen
 
 # let two parties battle
 curl -H "Content-Type: application/json" -X POST -d '[{... list of two response objects of /parties ...}]' localhost:8083/parties | jq
+
+# use the promoter to let two parties battle
+curl localhost:8082/promoteFight
 ```
 The use of `jq` is optional but recommended.
