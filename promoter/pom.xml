@@ -9,19 +9,15 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>camp</artifactId>
+    <artifactId>promoter</artifactId>
 
     <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <scope>runtime</scope>
+            <groupId>ch.bfh.zodnrk</groupId>
+            <artifactId>camp</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
 
         <dependency>
@@ -66,7 +62,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>ch.bfh.zodnrk.camp.CampApplication</mainClass>
+                            <mainClass>ch.bfh.zodnrk.promoter.PromoterApplication</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
