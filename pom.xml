@@ -23,6 +23,7 @@
         <module>camp</module>
         <module>promoter</module>
         <module>arena</module>
+        <module>registry</module>
     </modules>
     <packaging>pom</packaging>
 
