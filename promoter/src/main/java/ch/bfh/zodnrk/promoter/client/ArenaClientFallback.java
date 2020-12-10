@@ -1,6 +1,7 @@
 package ch.bfh.zodnrk.promoter.client;
 
-import ch.bfh.zodnrk.camp.model.Party;
+
+import ch.bfh.zodnrk.promoter.model.Party;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

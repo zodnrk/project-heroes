@@ -1,6 +1,7 @@
 package ch.bfh.zodnrk.promoter.client;
 
-import ch.bfh.zodnrk.camp.model.Party;
+
+import ch.bfh.zodnrk.promoter.model.Party;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.web.bind.annotation.GetMapping;

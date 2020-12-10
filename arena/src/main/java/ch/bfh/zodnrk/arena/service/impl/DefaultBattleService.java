@@ -1,8 +1,8 @@
 package ch.bfh.zodnrk.arena.service.impl;
 
+import ch.bfh.zodnrk.arena.model.Hero;
+import ch.bfh.zodnrk.arena.model.Party;
 import ch.bfh.zodnrk.arena.service.BattleService;
-import ch.bfh.zodnrk.camp.model.Hero;
-import ch.bfh.zodnrk.camp.model.Party;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
