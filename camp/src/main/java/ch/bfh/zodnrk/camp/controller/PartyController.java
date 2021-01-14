@@ -10,7 +10,6 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 @RestController
-@RequestMapping("/parties")
 public class PartyController {
     private final PartyService partyService;
 
@@ -18,11 +17,10 @@ public class PartyController {
         this.partyService = partyService;
     }
 
-    @PostMapping
-    public @ResponseBody
-    Party create(@RequestBody HashMap<String, String> data) {
-        Party party = partyService.createParty(data.get("name"));
-        party.add(linkTo(methodOn(PartyController.class).create(data)).withSelfRel());
+    @GetMapping(value = "createParty")
+    public Party create(@RequestParam String name) {
+        Party party = partyService.createParty(name);
+        party.add(linkTo(methodOn(PartyController.class).create(name)).withSelfRel());
         party.getMembers().forEach(hero -> {
             party.add(linkTo(methodOn(HeroController.class).getById(hero.getId())).withRel("heroes"));
         });
