@@ -1,8 +1,15 @@
 package ch.bfh.zodnrk.promoter.client;
 
-import ch.bfh.zodnrk.camp.model.Party;
-import org.springframework.hateoas.EntityModel;
 
+import ch.bfh.zodnrk.promoter.model.Party;
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.hateoas.EntityModel;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@FeignClient("camp-service")
 public interface CampClient {
-    public EntityModel<Party> createParty(String name);
+
+    @GetMapping("/createParty")
+    public EntityModel<Party> createParty(@RequestParam(value = "name") String name);
 }

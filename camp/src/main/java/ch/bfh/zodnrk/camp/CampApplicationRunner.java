@@ -2,14 +2,17 @@ package ch.bfh.zodnrk.camp;
 
 import ch.bfh.zodnrk.camp.repository.HeroRepository;
 import ch.bfh.zodnrk.camp.service.HeroService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.stereotype.Component;
 
 @Component
 public class CampApplicationRunner implements org.springframework.boot.ApplicationRunner {
 
+    @Autowired
     private final HeroService heroService;
 
+    @Autowired
     private final HeroRepository heroRepository;
 
     public CampApplicationRunner(HeroService heroService, HeroRepository heroRepository) {

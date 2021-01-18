@@ -1,6 +1,7 @@
 package ch.bfh.zodnrk.promoter.service.impl;
 
-import ch.bfh.zodnrk.camp.model.Party;
+
+import ch.bfh.zodnrk.promoter.model.Party;
 import ch.bfh.zodnrk.promoter.client.ArenaClient;
 import ch.bfh.zodnrk.promoter.client.CampClient;
 import ch.bfh.zodnrk.promoter.service.PromoterService;

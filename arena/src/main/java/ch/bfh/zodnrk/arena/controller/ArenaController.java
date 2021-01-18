@@ -1,7 +1,7 @@
 package ch.bfh.zodnrk.arena.controller;
 
+import ch.bfh.zodnrk.arena.model.Party;
 import ch.bfh.zodnrk.arena.service.BattleService;
-import ch.bfh.zodnrk.camp.model.Party;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
